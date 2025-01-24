@@ -17,18 +17,18 @@ import React from "react";
 const REGION = "us-east-1";
 
 // When Checking The Client/UI or running the dev server use line 21 to 25 and running
-// const AWS_CREDENTIALS = {
-//   accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID || "",
-//   secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY || "",
-// };
-// const BUCKET_NAME = import.meta.env.VITE_AWS_BUCKET_NAME || "";
+const AWS_CREDENTIALS = {
+  accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID || "",
+  secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY || "",
+};
+const BUCKET_NAME = import.meta.env.VITE_AWS_BUCKET_NAME || "";
 
 // when checking the jest test cases uncomment the following
-const AWS_CREDENTIALS = {
-  accessKeyId: process.env.VITE_AWS_ACCESS_KEY_ID || "",
-  secretAccessKey: process.env.VITE_AWS_SECRET_ACCESS_KEY || "",
-};
-const BUCKET_NAME = process.env.VITE_AWS_BUCKET_NAME || "";
+// const AWS_CREDENTIALS = {
+//   accessKeyId: process.env.VITE_AWS_ACCESS_KEY_ID || "",
+//   secretAccessKey: process.env.VITE_AWS_SECRET_ACCESS_KEY || "",
+// };
+// const BUCKET_NAME = process.env.VITE_AWS_BUCKET_NAME || "";
 
 const HISTORY_KEY = "sentiment-history.json";
 
@@ -236,7 +236,7 @@ const App = () => {
   };
 
   return (
-    <main className="min-h-screen flex items-center bg-gray-300">
+    <main className="min-h-screen flex items-center bg-gray-300 p-4 md:p-0">
       <form
         onSubmit={handleSubmit}
         className="shadow max-w-screen-md mx-auto py-4 w-full px-4 rounded bg-white"
@@ -265,7 +265,7 @@ const App = () => {
         </div>
         {error && <div className="text-red-600 mb-4">{error}</div>}
         <div className="shadow-lg rounded w-full pt-4 p-4 bg-gray-100">
-          <div className="flex items-center justify-between mb-4">
+          <div className="flex flex-col md:flex-row items-center justify-between mb-4">
             <p className="text-lg font-medium">Analysis History:</p>
             <div className="flex items-center gap-4">
               <div className="relative">
